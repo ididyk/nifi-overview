@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    nifi:
+        restart: always
+        build: ./demo
+        ports:
+            - "9999:8080"
+    nifi_registry:
+        restart: always
+        image: "apache/nifi-registry:latest"
+        ports:
+            - "18080:18080"
